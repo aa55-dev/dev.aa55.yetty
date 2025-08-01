@@ -1,3 +1,37 @@
 # yeTTY
+yeTTY is an open source application for embedded developers to view logs from serial port.
 
-yeTTY is an open source application for embedded developers to view logs from serial port. This repo allows installing yeTTY through Flatpak
+## Download
+
+Source code is available on [https://github.com/aa55-dev/yeTTY/](https://github.com/aa55-dev/yeTTY/)
+
+## Features
+1. Text highlighting
+
+    yeTTY uses KDE's KTextEditor for displaying the logs. KTextEditor provides yeTTY with syntax highlighting and text search.
+
+2. Auto reconnection
+
+    In case your board gets disconnected, yeTTY will keep on attempting to reconnect to the same port.
+
+3. Audio alert on string match
+
+    yeTTY can monitor the output for a specified keyword and alert you with a sound upon match.
+
+4. Long term run mode
+
+    This is useful if you need to keep the board running overnight. yeTTY will capture the logs from serial port and compress it and save them to storage.
+
+5. Suspend during flashing
+
+    If your board uses the same serial port for both logs and flashing, prepend the flashing command with `yetty_suspend` to suspend yeTTY while the board is being flashed.
+
+    ESP32 Example:
+
+    ```
+    yetty_suspend ttyUSB0 idf.py -p /dev/ttyUSB0 flash
+    ```
+
+6. Auto baud rate detection
+
+    yeTTY can attempt to automatically detect the baud rate by trying out different baud rates till it finds one with readable ASCII text.
