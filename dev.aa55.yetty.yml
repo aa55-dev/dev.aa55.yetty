@@ -36,4 +36,4 @@ modules:
     sources:
       - type: git
         url: https://github.com/aa55-dev/yeTTY.git
-        commit: d2c8554bbf5528a50c1fccaf6a17da775db27c7d
+        commit: 28968f2f65d9bec5f3f26585ab9d95720eda474f
